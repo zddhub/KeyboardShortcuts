@@ -206,13 +206,13 @@ extension KeyboardShortcuts {
 					return event
 				}
 
-				if
-					event.modifiers.isEmpty,
-					event.keyCode == kVK_Escape // TODO: Make this strongly typed.
-				{
-					self.blur()
-					return nil
-				}
+//				if
+//					event.modifiers.isEmpty,
+//					event.keyCode == kVK_Escape // TODO: Make this strongly typed.
+//				{
+//					self.blur()
+//					return nil
+//				}
 
 				if
 					event.modifiers.isEmpty,
@@ -226,7 +226,8 @@ extension KeyboardShortcuts {
 
 				// The “shift” key is not allowed without other modifiers or a function key, since it doesn't actually work.
 				guard
-					!event.modifiers.subtracting(.shift).isEmpty
+          event.modifiers.isEmpty
+            || !event.modifiers.subtracting(.shift).isEmpty
 						|| event.specialKey?.isFunctionKey == true,
 					let shortcut = Shortcut(event: event)
 				else {
