@@ -6,6 +6,8 @@ extension KeyboardShortcuts.Name {
 	static let testShortcut2 = Self("testShortcut2")
 	static let testShortcut3 = Self("testShortcut3")
 	static let testShortcut4 = Self("testShortcut4")
+  static let testShortcut5 = Self("testShortcut5")
+  static let testShortcut6 = Self("testShortcut6")
 }
 
 private struct DynamicShortcutRecorder: View {
@@ -97,9 +99,11 @@ private struct DoubleShortcut: View {
 					Text("Pressed? \(isPressed2 ? "👍" : "👎")")
 						.offset(x: 90)
 				}
+      KeyboardShortcuts.Recorder("Shortcut 5:", name: .testShortcut5)
+      KeyboardShortcuts.Recorder("Shortcut 6:", name: .testShortcut6)
 			Spacer()
 			Button("Reset All") {
-				KeyboardShortcuts.reset(.testShortcut1, .testShortcut2)
+        KeyboardShortcuts.reset(.testShortcut1, .testShortcut2, .testShortcut5, .testShortcut6)
 			}
 		}
 			.offset(x: -40)
