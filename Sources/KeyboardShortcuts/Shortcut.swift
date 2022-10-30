@@ -698,6 +698,7 @@ extension KeyboardShortcuts.Shortcut {
 		return nil
 	}
 
+	// This can be exposed if anyone needs it, but I prefer to keep the API surface small for now.
 	/**
 	Key equivalent string in `NSMenuItem` format.
 
