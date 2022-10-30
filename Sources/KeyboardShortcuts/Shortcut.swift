@@ -288,6 +288,7 @@ extension KeyboardShortcuts.Shortcut {
 		return String(utf16CodeUnits: characters, count: length)
 	}
 
+	// This can be exposed if anyone needs it, but I prefer to keep the API surface small for now.
 	/**
 	This can be used to show the keyboard shortcut in a `NSMenuItem` by assigning it to `NSMenuItem#keyEquivalent`.
 
