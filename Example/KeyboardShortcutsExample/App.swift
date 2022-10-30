@@ -1,4 +1,5 @@
 import SwiftUI
+import KeyboardShortcuts
 
 @main
 struct AppMain: App {
@@ -9,5 +10,16 @@ struct AppMain: App {
 					AppState.shared.createMenus()
 				}
 		}
+    .commands {
+      CommandMenu("Test Command") {
+        Button("Shortcut 1") {
+        }
+        .keyboardShortcut(for: .testShortcut1)
+
+        Button("Shortcut 2") {
+        }
+        .keyboardShortcut(for: .testShortcut2)
+      }
+    }
 	}
 }
