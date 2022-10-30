@@ -6,6 +6,8 @@ extension KeyboardShortcuts.Name {
 	static let testShortcut2 = Self("testShortcut2")
 	static let testShortcut3 = Self("testShortcut3")
 	static let testShortcut4 = Self("testShortcut4")
+  static let testShortcut5 = Self("testShortcut5")
+  static let testShortcut6 = Self("testShortcut6")
 }
 
 private struct DynamicShortcutRecorder: View {
