@@ -13,14 +13,14 @@ struct AppMain: App {
 				}
 		}
     .commands {
-      CommandMenu("Test Command") {
-        Button("Shortcut 1") {
+      CommandMenu("Test Commands") {
+        Button("Shortcut 5") {
         }
-        .keyboardShortcut(for: .testShortcut1)
+        .keyboardShortcut(for: .testShortcut5)
 
-        Button("Shortcut 2") {
+        Button("Shortcut 6") {
         }
-        .keyboardShortcut(for: .testShortcut2)
+        .keyboardShortcut(for: .testShortcut6)
       }
     }
 	}
