@@ -45,5 +45,10 @@ extension View {
 			}
 		}
 	}
+
+  @MainActor
+  public func keyboardShortcut(for name: KeyboardShortcuts.Name) -> some View {
+    modifier(ShortcutViewModifier(for: name))
+  }
 }
 #endif

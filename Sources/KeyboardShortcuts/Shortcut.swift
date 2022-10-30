@@ -387,4 +387,42 @@ extension View {
   }
 
 }
+
+
+// MARK: - SwiftUI ShortcutViewModifier
+
+@available(iOS 14.0, macOS 12.0, *)
+struct ShortcutViewModifier: ViewModifier {
+  class AssociatedShortcut: ObservableObject {
+    @Published var shortcut: KeyboardShortcut?
+  }
+
+  private var observer: NSObjectProtocol?
+
+  @ObservedObject private var associatedShortcut: AssociatedShortcut = AssociatedShortcut()
+
+  init(for name: KeyboardShortcuts.Name) {
+    self.associatedShortcut.shortcut = name.shortcut?.swiftUI
+
+    observer = NotificationCenter.default.addObserver(forName: .shortcutByNameDidChange, object: nil, queue: nil) { [self] notification in
+      guard
+        let nameInNotification = notification.userInfo?["name"] as? KeyboardShortcuts.Name,
+        name == nameInNotification
+      else {
+        return
+      }
+
+      associatedShortcut.shortcut = nameInNotification.shortcut?.swiftUI
+    }
+  }
+
+  func body(content: Content) -> some View {
+    if let shortcut = associatedShortcut.shortcut {
+      content
+        .keyboardShortcut(shortcut)
+    } else {
+      content
+    }
+  }
+}
 #endif
