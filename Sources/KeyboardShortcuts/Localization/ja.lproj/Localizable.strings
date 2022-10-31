@@ -1,0 +1,5 @@
+"record_shortcut" = "レコードのショートカット";
+"press_shortcut" = "プレス ショートカット";
+"keyboard_shortcut_used_by_menu_item" = "このキーボード ショートカットは、「%@」メニュー項目で既に使用されているため、使用できません。";
+"keyboard_shortcut_used_by_system" = "このキーボード ショートカットは、既にシステム全体のキーボード ショートカットであるため、使用できません。";
+"keyboard_shortcuts_can_be_changed" = "システム全体のほとんどのキーボード ショートカットは、「システム設定 › キーボード › キーボード ショートカット」で変更できます。";
