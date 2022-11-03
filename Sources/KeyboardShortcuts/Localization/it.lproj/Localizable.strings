@@ -1,0 +1,5 @@
+"record_shortcut" = "Registra collegamento";
+"press_shortcut" = "Premi collegamento";
+"keyboard_shortcut_used_by_menu_item" = "Questa scorciatoia da tastiera non può essere utilizzata poiché è già utilizzata dalla voce di menu “%@”.";
+"keyboard_shortcut_used_by_system" = "Questa scorciatoia da tastiera non può essere utilizzata poiché è già una scorciatoia da tastiera a livello di sistema.";
+"keyboard_shortcuts_can_be_changed" = "La maggior parte delle scorciatoie da tastiera a livello di sistema può essere modificata in “Impostazioni di sistema › Tastiera › Scorciatoie da tastiera”.";
