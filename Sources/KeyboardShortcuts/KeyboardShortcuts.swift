@@ -37,6 +37,57 @@ public enum KeyboardShortcuts {
 	*/
 	static var isPaused = false
 
+	/**
+	Enable/disable monitoring of all keyboard shortcuts.
+
+	The default is `true`.
+	*/
+	public static var isEnabled = true {
+		didSet {
+			guard isEnabled != oldValue else {
+				return
+			}
+
+			CarbonKeyboardShortcuts.updateEventHandler()
+		}
+	}
+
+	/**
+	Enable keyboard shortcuts to work even when an `NSMenu` is open by setting this property when the menu opens and closes.
+
+	`NSMenu` runs in a tracking run mode that blocks keyboard shortcuts events. When you set this property to `true`, it switches to a different kind of event handler, which does work when the menu is open.
+
+	The main use-case for this is toggling the menu of a menu bar app with a keyboard shortcut.
+
+	```swift
+	import Cocoa
+	import KeyboardShortcuts
+
+	let menu = NSMenu()
+	let menuDelegate = MenuDelegate()
+	menu.delegate = menuDelegate
+
+	final class MenuDelegate: NSObject, NSMenuDelegate {
+		func menuWillOpen(_ menu: NSMenu) {
+			KeyboardShortcuts.isMenuOpen = true
+		}
+
+		func menuDidClose(_ menu: NSMenu) {
+			KeyboardShortcuts.isMenuOpen = false
+		}
+	}
+	```
+	*/
+	public static var isMenuOpen = false {
+		didSet {
+			guard isMenuOpen != oldValue else {
+				return
+			}
+
+			CarbonKeyboardShortcuts.updateEventHandler()
+		}
+	}
+
 	private static func register(_ shortcut: Shortcut) {
 		guard !registeredShortcuts.contains(shortcut) else {
 			return
