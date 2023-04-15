@@ -42,4 +42,13 @@ extension View {
   public func keyboardShortcut(for name: KeyboardShortcuts.Name) -> some View {
     modifier(ShortcutViewModifier(for: name))
   }
+
+  public func onKeyboardShortcut(for name: KeyboardShortcuts.Name) -> some View {
+      if let shortcut = name.shortcut {
+          if let keyEquivalent = shortcut.toKeyEquivalent() {
+              return AnyView(self.keyboardShortcut(keyEquivalent, modifiers: shortcut.toEventModifiers()))
+          }
+      }
+      return AnyView(self)
+  }
 }
