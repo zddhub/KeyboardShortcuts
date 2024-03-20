@@ -20,7 +20,8 @@ let package = Package(
 			name: "KeyboardShortcuts",
 			swiftSettings: [
 				.swiftLanguageMode(.v5)
-			]
+			],
+                        resources: [.copy("PrivacyInfo.xcprivacy")]
 		),
 		.testTarget(
 			name: "KeyboardShortcutsTests",
