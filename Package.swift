@@ -17,7 +17,8 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "KeyboardShortcuts"
+			name: "KeyboardShortcuts",
+      resources: [.copy("PrivacyInfo.xcprivacy")]
 		),
 		.testTarget(
 			name: "KeyboardShortcutsTests",
