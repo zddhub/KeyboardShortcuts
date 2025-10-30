@@ -1,5 +1,9 @@
-"record_shortcut" = "設定快速鍵";
-"press_shortcut" = "按下快速鍵";
-"keyboard_shortcut_used_by_menu_item" = "此快速鍵無法使用，因為它已被選單項目「%@」使用。";
-"keyboard_shortcut_used_by_system" = "此快速鍵無法使用，因為它已被系統使用。";
-"keyboard_shortcuts_can_be_changed" = "可以在「系統設定 › 鍵盤 › 鍵盤快速鍵」中更改大多數的系統快速鍵。";
+"record_shortcut" = "設定快捷鍵";
+"press_shortcut" = "請按下快捷鍵";
+"keyboard_shortcut_used_by_menu_item" = "目前的快捷鍵無法使用，因為它已被用作選單項目「%@」的快捷鍵。";
+"keyboard_shortcut_used_by_system" = "目前的快捷鍵無法使用，因為它已被系統快捷鍵佔用。";
+"keyboard_shortcuts_can_be_changed" = "你可以在「系統設定 › 鍵盤 › 鍵盤快捷鍵」中更改大部分系統快捷鍵。";
+"keyboard_shortcut_disallowed" = "Option 鍵必須與 Command 鍵或 Control 鍵一同使用。";
+"force_use_shortcut" = "強制使用";
+"ok" = "確定";
+"space_key" = "空白鍵";
